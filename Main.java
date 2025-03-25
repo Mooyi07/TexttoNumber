@@ -1,7 +1,9 @@
+// Text to Number by Mooyi07
 import java.util.Scanner;
 
 public class Main {
     public static int numRet(String input) {
+        // up to million only since it is INTEGER data type
         String[] words = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
                           "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", 
                           "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", 
@@ -17,8 +19,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input: ");
+        String output = "";
+
+        // prevention of uppercase formats
         String input = scanner.nextLine().toLowerCase();
-        System.out.println("Output: " + numRet(input));
+
+        // Checking if the input has spaces, if so then splits into arrays.
+        if (!input.contains(" ")){
+            output = numRet(input) + "";
+        } else {
+            String[] myArray = input.split(" ");
+            
+        }
+
+        System.out.println("Output: " + output);
         scanner.close();
     }
 }
