@@ -1,15 +1,18 @@
-import java.util.Scanner;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
-    private static final Map<String, Integer> numberMap = Map.of(
-        "one", 1, "two", 2, "three", 3, "four", 4, "five", 5, "six", 6,
-        "seven", 7, "eight", 8, "nine", 9, "ten", 10, "eleven", 11, "twelve", 12,
-        "thirteen", 13, "fourteen", 14, "fifteen", 15, "sixteen", 16, "seventeen", 17,
-        "eighteen", 18, "nineteen", 19, "twenty", 20, "thirty", 30, "forty", 40,
-        "fifty", 50, "sixty", 60, "seventy", 70, "eighty", 80, "ninety", 90,
-        "hundred", 100, "thousand", 1000, "million", 1000000
-    );
+    private static final Map<String, Integer> numberMap = new HashMap<>();
+
+    static {
+        numberMap.put("one", 1); numberMap.put("two", 2); numberMap.put("three", 3); numberMap.put("four", 4); numberMap.put("five", 5);
+        numberMap.put("six", 6); numberMap.put("seven", 7); numberMap.put("eight", 8); numberMap.put("nine", 9); numberMap.put("ten", 10);
+        numberMap.put("eleven", 11); numberMap.put("twelve", 12); numberMap.put("thirteen", 13); numberMap.put("fourteen", 14); numberMap.put("fifteen", 15);
+        numberMap.put("sixteen", 16); numberMap.put("seventeen", 17); numberMap.put("eighteen", 18); numberMap.put("nineteen", 19); numberMap.put("twenty", 20);
+        numberMap.put("thirty", 30); numberMap.put("forty", 40); numberMap.put("fifty", 50); numberMap.put("sixty", 60); numberMap.put("seventy", 70);
+        numberMap.put("eighty", 80); numberMap.put("ninety", 90); numberMap.put("hundred", 100); numberMap.put("thousand", 1000); numberMap.put("million", 1000000);
+    }
 
     public static int numRet(String input) {
         return numberMap.getOrDefault(input, 0);
