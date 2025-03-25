@@ -1,47 +1,25 @@
 import java.util.Scanner;
+import java.util.Map;
 
 public class Main {
-    public static int numRet(String input){
-        switch(input){
-            case "one": return 1;
-            case "two": return 2;
-            case "three": return 3;
-            case "four": return 4;
-            case "five": return 5;
-            case "six": return 6;
-            case "seven": return 7;
-            case "eight": return 8;
-            case "nine": return 9;
-            case "ten": return 10;
-            case "eleven": return 11;
-            case "twelve": return 12;
-            case "thirteen": return 13;
-            case "fourteen": return 14;
-            case "fifteen": return 15; 
-            case "sixteen": return 16;
-            case "seventeen": return 17;
-            case "eighteen": return 18;
-            case "nineteen": return 19;
-            case "twenty": return 20;
-            case "thirty": return 30;
-            case "forty": return 40;
-            case "fifty": return 50;
-            case "sixty": return 60;
-            case "seventy": return 70;
-            case "eighty": return 80;
-            case "ninety": return 90;
-            case "hundred": return 100;
-            case "thousand": return 1000;
-            case "million": return 1000000;
-            default: return 0;
-        }
+    private static final Map<String, Integer> numberMap = Map.of(
+        "one", 1, "two", 2, "three", 3, "four", 4, "five", 5, "six", 6,
+        "seven", 7, "eight", 8, "nine", 9, "ten", 10, "eleven", 11, "twelve", 12,
+        "thirteen", 13, "fourteen", 14, "fifteen", 15, "sixteen", 16, "seventeen", 17,
+        "eighteen", 18, "nineteen", 19, "twenty", 20, "thirty", 30, "forty", 40,
+        "fifty", 50, "sixty", 60, "seventy", 70, "eighty", 80, "ninety", 90,
+        "hundred", 100, "thousand", 1000, "million", 1000000
+    );
+
+    public static int numRet(String input) {
+        return numberMap.getOrDefault(input, 0);
     }
 
-    public static void main(String[] args){
-        Scanner s1 = new Scanner(System.in);
-        System.out.print("Input: " );
-        String input = s1.nextLine();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input: ");
+        String input = scanner.nextLine().toLowerCase();
         System.out.println("Output: " + numRet(input));
-        s1.close();
+        scanner.close();
     }
 }
