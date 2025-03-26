@@ -29,7 +29,10 @@ public class Main {
                 if (returnVal > 99){
                     output = output + (numRet(myArray[i-1]) * numRet(myArray[i])); 
                 }
+                // Checks the last 2 arrays if they are the by Tens or Ones
                 if ((myArray.length-2) <= i && returnVal < 91){
+
+                    // Instead of multiplying the values, it will be added instead
                     output = output + numRet(myArray[i]);
                 }
             }
