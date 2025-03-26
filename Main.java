@@ -19,17 +19,27 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input: ");
-        String output = "";
+        int output = 0;
 
         // prevention of uppercase formats
         String input = scanner.nextLine().toLowerCase();
 
+        int initial = 0;
         // Checking if the input has spaces, if so then splits into arrays.
         if (!input.contains(" ")){
-            output = numRet(input) + "";
+            output = numRet(input);
         } else {
             String[] myArray = input.split(" ");
             
+            for (int i = 0; i < myArray.length; i++){
+                int returnVal = numRet(myArray[i]);
+                if (returnVal > 99){
+                    output = output + (numRet(myArray[i-1]) * numRet(myArray[i])); 
+                }
+                if ((myArray.length-2) <= i && returnVal < 91){
+                    output = output + numRet(myArray[i]);
+                }
+            }
         }
 
         System.out.println("Output: " + output);
