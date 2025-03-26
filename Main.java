@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static int numRet(String input) {
+    static int numRet(String input) {
         // up to million only since it is INTEGER data type
         String[] words = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
                           "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", 
@@ -16,7 +16,7 @@ public class Main {
         return 0;
     }
 
-    public static int outputValue(String input){
+    static int outputValue(String input){
         // Checking if the input has spaces, if so then splits into arrays.
         int output = 0;
         if (!input.contains(" ")){
