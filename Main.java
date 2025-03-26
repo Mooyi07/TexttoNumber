@@ -24,7 +24,6 @@ public class Main {
         // prevention of uppercase formats
         String input = scanner.nextLine().toLowerCase();
 
-        int initial = 0;
         // Checking if the input has spaces, if so then splits into arrays.
         if (!input.contains(" ")){
             output = numRet(input);
@@ -42,7 +41,7 @@ public class Main {
             }
         }
 
-        System.out.println("Output: " + output);
+        System.out.println("Output: " + String.format("%,d", output));
         scanner.close();
     }
 }
