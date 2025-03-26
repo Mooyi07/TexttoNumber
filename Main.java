@@ -16,15 +16,9 @@ public class Main {
         return 0;
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Input: ");
-        int output = 0;
-
-        // prevention of uppercase formats
-        String input = scanner.nextLine().toLowerCase();
-
+    public static int outputValue(String input){
         // Checking if the input has spaces, if so then splits into arrays.
+        int output = 0;
         if (!input.contains(" ")){
             output = numRet(input);
         } else {
@@ -40,8 +34,17 @@ public class Main {
                 }
             }
         }
+        return output;
+    }
 
-        System.out.println("Output: " + String.format("%,d", output));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input: ");
+
+        // prevention of uppercase formats
+        String input = scanner.nextLine().toLowerCase();
+
+        System.out.println("Output: " + String.format("%,d", outputValue(input)));
         scanner.close();
     }
 }
